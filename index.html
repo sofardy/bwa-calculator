@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Car Import Calculator</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			}
+
+			body {
+				background-color: #ff8c03;
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+			}
+
+			.calc-container {
+				width: 100%;
+				max-width: 1200px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 24px;
+			}
+
+			@media (max-width: 768px) {
+				.calc-container {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			.calc-form-group {
+				margin-bottom: 16px;
+				width: 100%;
+			}
+
+			.calc-label {
+				display: block;
+				color: white;
+				margin-bottom: 8px;
+			}
+
+			.calc-input,
+			.calc-select {
+				width: 100%;
+				padding: 12px;
+				border: none;
+				border-radius: 4px;
+				background-color: white;
+				font-size: 16px;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+			}
+
+			.calc-select-wrapper {
+				position: relative;
+				width: 100%;
+			}
+
+			.calc-select-wrapper::after {
+				content: "";
+				position: absolute;
+				right: 12px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 16px;
+				height: 16px;
+				background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.2982 5.29825L7.40351 10.193C7.17544 10.4211 8.82456 10.4211 8.59649 10.193L3.70175 5.29825C3.52632 5.10526 3.2807 5 3 5C2.45614 5 2 5.45614 2 6C2 6.2807 2.10526 6.52632 2.29825 6.70175L7.19298 11.5965C7.63158 12.0526 8.36842 12.0526 8.80702 11.5965L13.7018 6.70175C13.8947 6.52632 14 6.2807 14 6C14 5.45614 13.5439 5 13 5C12.7193 5 12.4737 5.10526 12.2982 5.29825Z' fill='%23434343'/%3E%3C/svg%3E%0A");
+				background-repeat: no-repeat;
+				background-position: center;
+				pointer-events: none;
+			}
+
+			.calc-flex-row {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+				width: 100%;
+				position: relative;
+			}
+
+			.calc-flex-row .calc-input,
+			.calc-flex-row .calc-select-wrapper {
+				flex: 1;
+				min-width: 0;
+			}
+
+			.calc-price {
+				color: white;
+				font-size: 20px;
+				font-weight: 500;
+				white-space: nowrap;
+				position: absolute;
+				right: -120px;
+				text-align: left;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 100px;
+			}
+
+			.calc-checkbox-container {
+				display: flex;
+				align-items: center;
+				margin-bottom: 24px;
+			}
+
+			.calc-checkbox-container .calc-input {
+				width: auto;
+				margin-right: 8px;
+			}
+
+			.calc-custom-checkbox {
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				border-radius: 4px;
+				margin-right: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+			}
+
+			.calc-custom-checkbox.checked::after {
+				content: "✓";
+				color: #ff8c03;
+				font-weight: bold;
+			}
+
+			.calc-checkbox-label {
+				color: white;
+				cursor: pointer;
+			}
+
+			.calc-calculate-btn {
+				width: 100%;
+				padding: 16px;
+				background-color: #434343;
+				color: white;
+				border: none;
+				border-radius: 4px;
+				font-size: 16px;
+				font-weight: 500;
+				cursor: pointer;
+				margin-top: auto;
+			}
+
+			.calc-cost-breakdown {
+				background-color: white;
+				border-radius: 8px;
+				padding: 28px 35px 35px 35.5px;
+			}
+
+			.calc-cost-item {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 18px;
+				padding-bottom: 6px;
+				border-bottom: 1px solid rgba(137, 137, 137, 0.56);
+			}
+
+			.calc-cost-item:last-child {
+				margin-bottom: 32px;
+			}
+
+			.calc-cost-name {
+				color: #898989;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 100%; /* 16px */
+				letter-spacing: -1.12px;
+			}
+
+			.calc-cost-value {
+				color: #434343;
+				font-size: 24px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 100%; /* 24px */
+				letter-spacing: -1.68px;
+			}
+
+			.calc-total-row {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 32px;
+				margin-bottom: 16px;
+				width: 285px;
+				margin: 0 auto;
+			}
+
+			.calc-total-label {
+				font-size: 24px;
+				font-weight: 700;
+			}
+
+			.calc-total-value {
+				color: #ff8c03;
+				font-size: 28px;
+				font-weight: 700;
+			}
+
+			.calc-want-btn {
+				width: 100%;
+				padding: 16px;
+				background-color: #6c36fe;
+				color: white;
+				border: none;
+				border-radius: 8px;
+				font-size: 20px;
+				font-weight: 500;
+				cursor: pointer;
+				margin-top: 39px;
+			}
+
+			.calc-hidden {
+				display: none;
+			}
+
+			#calc-insurance-checkbox {
+				position: absolute;
+				opacity: 0;
+			}
+
+			.calc-form-section {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 24px;
+			}
+
+			.calc-form-columns {
+				grid-column: 1 / -1;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 24px;
+				margin-bottom: 24px;
+			}
+
+			.calc-checkbox-container {
+				grid-column: 1;
+				margin-bottom: 24px;
+			}
+
+			.calc-calculate-btn {
+				grid-column: 1;
+				width: 100%;
+				padding: 16px;
+				background-color: #434343;
+				color: white;
+				border: none;
+				border-radius: 4px;
+				font-size: 16px;
+				font-weight: 500;
+				cursor: pointer;
+			}
+
+			@media (max-width: 767.9px) {
+				.calc-form-section {
+					grid-template-columns: 1fr;
+				}
+
+				.calc-form-columns {
+					grid-template-columns: 1fr;
+				}
+
+				.calc-checkbox-container {
+					grid-column: 1;
+				}
+
+				.calc-calculate-btn {
+					grid-column: 1;
+				}
+
+				.calc-price {
+					position: unset;
+					width: auto;
+					text-align: right;
+				}
+
+				.calc-flex-row {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-end;
+					gap: 16px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calc-container">
+			<!-- Left Column - Form -->
+			<div class="calc-form-section">
+				<div class="calc-form-columns">
+					<div class="calc-form-column">
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-vehicle-type">Тип транспортного засобу</label>
+							<div class="calc-select-wrapper">
+								<select class="calc-select" id="calc-vehicle-type">
+									<option>Легковий</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-engine-type">Тип двигуна</label>
+							<div class="calc-select-wrapper">
+								<select class="calc-select" id="calc-engine-type">
+									<option>Дизельний</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-battery-capacity">Об'єм батареї (кВт*год)</label>
+							<input type="text" class="calc-input" id="calc-battery-capacity" value="50" />
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-engine-capacity">Об'єм двигуна (см куб.)</label>
+							<input type="text" class="calc-input" id="calc-engine-capacity" value="2000" />
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-year">Рік випуску</label>
+							<input type="text" class="calc-input" id="calc-year" value="2021" />
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-auction-fee">Аукціонний збір</label>
+							<div class="calc-flex-row">
+								<div class="calc-select-wrapper">
+									<select class="calc-select" id="calc-auction-fee">
+										<option>Copart</option>
+									</select>
+								</div>
+								<div class="calc-price">0 $</div>
+							</div>
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-usa-delivery">Доставка по США</label>
+							<div class="calc-flex-row">
+								<div class="calc-select-wrapper">
+									<select class="calc-select" id="calc-usa-delivery">
+										<option>ATLANTA EAST - GA</option>
+									</select>
+								</div>
+								<div class="calc-price">595 $</div>
+							</div>
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-from-usa">Доставка з США</label>
+							<div class="calc-flex-row">
+								<input type="text" class="calc-input" id="calc-from-usa" value="Savanna (GA)" />
+								<div class="calc-price">900 $</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="calc-form-column">
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-car-price">Вартість авто (USD)</label>
+							<input type="text" class="calc-input" id="calc-car-price" value="19500" />
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-region">Оберіть регіон</label>
+							<div class="calc-select-wrapper">
+								<select class="calc-select" id="calc-region">
+									<option>"Відкриті штати" - 0 $</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="calc-form-group">
+							<label class="calc-label" for="calc-commission">Оберіть комісію Best West Cars</label>
+							<div class="calc-select-wrapper">
+								<select class="calc-select" id="calc-commission">
+									<option>Під ключ з ремонтом - 1000 $</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="calc-checkbox-container">
+					<div id="calc-custom-checkbox" class="calc-custom-checkbox"></div>
+					<input type="checkbox" id="calc-insurance-checkbox" class="calc-input" />
+					<label for="calc-insurance-checkbox" class="calc-checkbox-label">
+						Страхування (2% від вартості лоту, мінімум 300$)
+					</label>
+				</div>
+
+				<button class="calc-calculate-btn">Розрахувати</button>
+			</div>
+
+			<!-- Right Column - Cost Breakdown -->
+			<div class="calc-cost-breakdown">
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Документи на експорт авто:</div>
+					<div class="calc-cost-value">150 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Вигрузка з порту Клайпеда:</div>
+					<div class="calc-cost-value">400 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Доставка Клайпеда - Львів:</div>
+					<div class="calc-cost-value">800 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">
+						Проходження кордону та
+						<br />
+						залучення спецтранспорту:
+					</div>
+					<div class="calc-cost-value">110 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Акциз:</div>
+					<div class="calc-cost-value">0 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Ввізне мито:</div>
+					<div class="calc-cost-value">0 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">ПДВ:</div>
+					<div class="calc-cost-value">0 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Брокерські послуги:</div>
+					<div class="calc-cost-value">250 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Доставка на митницю:</div>
+					<div class="calc-cost-value">80 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Сертифікація:</div>
+					<div class="calc-cost-value">150 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">
+						Комісія за переказ коштів
+						<br />
+						в США (1,5%) :
+					</div>
+					<div class="calc-cost-value">0 $</div>
+				</div>
+
+				<div class="calc-total-row">
+					<div class="calc-total-label">РАЗОМ:</div>
+					<div class="calc-total-value">25 000$</div>
+				</div>
+
+				<button class="calc-want-btn">Хочу</button>
+			</div>
+		</div>
+
+		<script>
+			// Custom checkbox functionality
+			const customCheckbox = document.getElementById("calc-custom-checkbox");
+			const insuranceCheckbox = document.getElementById("calc-insurance-checkbox");
+
+			customCheckbox.addEventListener("click", function () {
+				this.classList.toggle("checked");
+				insuranceCheckbox.checked = !insuranceCheckbox.checked;
+			});
+
+			// Calculate button functionality
+			const calculateBtn = document.querySelector(".calc-calculate-btn");
+			calculateBtn.addEventListener("click", function () {
+				alert("Calculation complete! Total: 25 000$");
+			});
+
+			// Want button functionality
+			const wantBtn = document.querySelector(".calc-want-btn");
+			wantBtn.addEventListener("click", function () {
+				alert("Thank you for your interest! We will contact you soon.");
+			});
+		</script>
+	</body>
+</html>
