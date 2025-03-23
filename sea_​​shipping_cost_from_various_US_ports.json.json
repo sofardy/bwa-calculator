@@ -1,0 +1,34 @@
+[
+	{
+		"location_name": "New Jersey (NJ)",
+		"coust_usd": 850
+	},
+	{
+		"location_name": "Savanna (GA)",
+		"coust_usd": 900
+	},
+	{
+		"location_name": "Houston (TX)",
+		"coust_usd": 1100
+	},
+	{
+		"location_name": "Los Angeles (Ca)",
+		"coust_usd": 1400
+	},
+	{
+		"location_name": "Chicago (IL)",
+		"coust_usd": 1050
+	},
+	{
+		"location_name": "Miami (FL)",
+		"coust_usd": 950
+	},
+	{
+		"location_name": "Seattle (Wa)",
+		"coust_usd": 1550
+	},
+	{
+		"location_name": "Canada Montreal/Toronto",
+		"coust_usd": 1400
+	}
+]

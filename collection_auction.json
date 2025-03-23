@@ -1,0 +1,686 @@
+[
+	{
+		"auction_bid": 49,
+		"auction_collection": 201,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 49,
+		"auction_collection": 201,
+		"additional_fee": "",
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 99,
+		"auction_collection": 201,
+		"additional_fee": 4,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 99,
+		"auction_collection": 201,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 199,
+		"auction_collection": 225,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 199,
+		"auction_collection": 225,
+		"additional_fee": 15,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 299,
+		"auction_collection": 260,
+		"additional_fee": 5,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 299,
+		"auction_collection": 260,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 349,
+		"auction_collection": 280,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 349,
+		"auction_collection": 280,
+		"additional_fee": "",
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 399,
+		"auction_collection": 290,
+		"additional_fee": 15,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 399,
+		"auction_collection": 290,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 449,
+		"auction_collection": 320,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 449,
+		"auction_collection": 320,
+		"additional_fee": "",
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 499,
+		"auction_collection": 330,
+		"additional_fee": 10,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 499,
+		"auction_collection": 330,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 549,
+		"auction_collection": 340,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 549,
+		"auction_collection": 340,
+		"additional_fee": 10,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 599,
+		"auction_collection": 350,
+		"additional_fee": 15,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 599,
+		"auction_collection": 350,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 699,
+		"auction_collection": 365,
+		"additional_fee": "",
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 699,
+		"auction_collection": 365,
+		"additional_fee": 25,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 799,
+		"auction_collection": 385,
+		"additional_fee": 25,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 799,
+		"auction_collection": 385,
+		"additional_fee": 5,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 899,
+		"auction_collection": 400,
+		"additional_fee": 10,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 899,
+		"auction_collection": 400,
+		"additional_fee": 25,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 999,
+		"auction_collection": 415,
+		"additional_fee": 50,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 999,
+		"auction_collection": 415,
+		"additional_fee": 10,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 1000,
+		"auction_collection": 225,
+		"additional_fee": 55,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 1199,
+		"auction_collection": 430,
+		"additional_fee": 35,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 1199,
+		"auction_collection": 430,
+		"additional_fee": 55,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 1299,
+		"auction_collection": 425,
+		"additional_fee": 75,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 1299,
+		"auction_collection": 425,
+		"additional_fee": 55,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 1399,
+		"auction_collection": 475,
+		"additional_fee": 25,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 1399,
+		"auction_collection": 475,
+		"additional_fee": 40,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 1499,
+		"auction_collection": 480,
+		"additional_fee": 60,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 1499,
+		"auction_collection": 480,
+		"additional_fee": 35,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 1599,
+		"auction_collection": 490,
+		"additional_fee": 50,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 1599,
+		"auction_collection": 490,
+		"additional_fee": 65,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 1699,
+		"auction_collection": 505,
+		"additional_fee": 70,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 1699,
+		"auction_collection": 505,
+		"additional_fee": 50,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 1799,
+		"auction_collection": 515,
+		"additional_fee": 60,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 1799,
+		"auction_collection": 515,
+		"additional_fee": 80,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 1999,
+		"auction_collection": 525,
+		"additional_fee": 90,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 1999,
+		"auction_collection": 525,
+		"additional_fee": 70,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 2399,
+		"auction_collection": 555,
+		"additional_fee": 60,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 2399,
+		"auction_collection": 555,
+		"additional_fee": 95,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 2499,
+		"auction_collection": 580,
+		"additional_fee": 105,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 2499,
+		"auction_collection": 580,
+		"additional_fee": 70,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 2999,
+		"auction_collection": 600,
+		"additional_fee": 85,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 2999,
+		"auction_collection": 600,
+		"additional_fee": 130,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 3000,
+		"auction_collection": 280,
+		"additional_fee": 60,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 3499,
+		"auction_collection": 650,
+		"additional_fee": 130,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 3499,
+		"auction_collection": 650,
+		"additional_fee": 80,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 3999,
+		"auction_collection": 700,
+		"additional_fee": 80,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 3999,
+		"auction_collection": 700,
+		"additional_fee": 140,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 4499,
+		"auction_collection": 800,
+		"additional_fee": 65,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 4499,
+		"auction_collection": 800,
+		"additional_fee": 40,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 4999,
+		"auction_collection": 825,
+		"additional_fee": 40,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 4999,
+		"auction_collection": 825,
+		"additional_fee": 90,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 5000,
+		"auction_collection": 340,
+		"additional_fee": 50,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 5999,
+		"auction_collection": 850,
+		"additional_fee": 125,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 5999,
+		"auction_collection": 850,
+		"additional_fee": 65,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 6499,
+		"auction_collection": 875,
+		"additional_fee": 100,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 6499,
+		"auction_collection": 875,
+		"additional_fee": 120,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 6999,
+		"auction_collection": 875,
+		"additional_fee": 155,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 6999,
+		"auction_collection": 875,
+		"additional_fee": 120,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 7000,
+		"auction_collection": 390,
+		"additional_fee": 35,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 7499,
+		"auction_collection": 900,
+		"additional_fee": 130,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 7499,
+		"auction_collection": 900,
+		"additional_fee": 150,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 7999,
+		"auction_collection": 900,
+		"additional_fee": 190,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 7999,
+		"auction_collection": 900,
+		"additional_fee": 150,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 8499,
+		"auction_collection": 925,
+		"additional_fee": 165,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 8499,
+		"auction_collection": 925,
+		"additional_fee": 185,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 8999,
+		"auction_collection": 925,
+		"additional_fee": 185,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 8999,
+		"auction_collection": 925,
+		"additional_fee": 185,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 9000,
+		"auction_collection": 425,
+		"additional_fee": 35,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 9999,
+		"auction_collection": 925,
+		"additional_fee": 185,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 9999,
+		"auction_collection": 925,
+		"additional_fee": 185,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 10499,
+		"auction_collection": 950,
+		"additional_fee": 190,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 10499,
+		"auction_collection": 950,
+		"additional_fee": 190,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 10999,
+		"auction_collection": 950,
+		"additional_fee": 190,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 10999,
+		"auction_collection": 950,
+		"additional_fee": 190,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 11000,
+		"auction_collection": 465,
+		"additional_fee": 30,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 11499,
+		"auction_collection": 950,
+		"additional_fee": 200,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 11499,
+		"auction_collection": 950,
+		"additional_fee": 190,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 11999,
+		"auction_collection": 960,
+		"additional_fee": 190,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 11999,
+		"auction_collection": 960,
+		"additional_fee": 195,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 12499,
+		"auction_collection": 975,
+		"additional_fee": 205,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 12499,
+		"auction_collection": 975,
+		"additional_fee": 190,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 13000,
+		"auction_collection": 495,
+		"additional_fee": 30,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 14999,
+		"auction_collection": 990,
+		"additional_fee": 190,
+		"auction_name": "Copart auction"
+	},
+	{
+		"auction_bid": 14999,
+		"auction_collection": 990,
+		"additional_fee": 190,
+		"auction_name": "IAAI auction"
+	},
+	{
+		"auction_bid": 15000,
+		"auction_collection": 525,
+		"additional_fee": 30,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 17000,
+		"auction_collection": 555,
+		"additional_fee": 30,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 19000,
+		"auction_collection": 585,
+		"additional_fee": 25,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 21000,
+		"auction_collection": 610,
+		"additional_fee": 20,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 23000,
+		"auction_collection": 630,
+		"additional_fee": 25,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 25000,
+		"auction_collection": 655,
+		"additional_fee": 30,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 27000,
+		"auction_collection": 685,
+		"additional_fee": 25,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 30000,
+		"auction_collection": 710,
+		"additional_fee": 25,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 32500,
+		"auction_collection": 735,
+		"additional_fee": 25,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 35000,
+		"auction_collection": 760,
+		"additional_fee": 25,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 37500,
+		"auction_collection": 785,
+		"additional_fee": 25,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 40000,
+		"auction_collection": 810,
+		"additional_fee": 25,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 45000,
+		"auction_collection": 835,
+		"additional_fee": 50,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 50000,
+		"auction_collection": 885,
+		"additional_fee": 50,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 60000,
+		"auction_collection": 935,
+		"additional_fee": 100,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 70000,
+		"auction_collection": 1035,
+		"additional_fee": 100,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 80000,
+		"auction_collection": 1135,
+		"additional_fee": 100,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 90000,
+		"auction_collection": 1235,
+		"additional_fee": 100,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 100000,
+		"auction_collection": 1335,
+		"additional_fee": 100,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 110000,
+		"auction_collection": 1435,
+		"additional_fee": 120,
+		"auction_name": "Manheim auction"
+	},
+	{
+		"auction_bid": 999999999,
+		"auction_collection": 1555,
+		"additional_fee": "",
+		"auction_name": "Manheim auction"
+	}
+]
