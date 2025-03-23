@@ -5,6 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Car Import Calculator</title>
 		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css"
+		/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
 	</head>
 	<body>
 		<div class="calc-container">
@@ -13,9 +18,9 @@
 				<div class="calc-form-columns">
 					<div class="calc-form-column">
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-vehicle-type">Тип транспортного засобу</label>
+							<label class="calc-label" for="vehicle-type">Тип транспортного засобу</label>
 							<div class="calc-select-wrapper">
-								<select class="calc-select" id="calc-vehicle-type">
+								<select class="calc-select" id="vehicle-type">
 									<option>Легковий</option>
 									<option>Кроссовер</option>
 									<option>Позашляховик</option>
@@ -24,9 +29,9 @@
 						</div>
 
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-engine-type">Тип двигуна</label>
+							<label class="calc-label" for="engine-type">Тип двигуна</label>
 							<div class="calc-select-wrapper">
-								<select class="calc-select" id="calc-engine-type">
+								<select class="calc-select" id="engine-type">
 									<option>Бензтиновий</option>
 									<option>Дизельній</option>
 									<option>Гібридний</option>
@@ -35,97 +40,85 @@
 							</div>
 						</div>
 
-						<div class="calc-form-group">
-							<label class="calc-label" for="calc-battery-capacity">Об'єм батареї (кВт*год)</label>
-							<input type="text" class="calc-input" id="calc-battery-capacity" value="" />
+						<div class="calc-form-group" id="battery-capacity-group">
+							<label class="calc-label" for="battery-capacity">Об'єм батареї (кВт*год)</label>
+							<input type="text" class="calc-input" id="battery-capacity" value="" />
+						</div>
+
+						<div class="calc-form-group" id="engine-volume-group">
+							<label class="calc-label" for="engine-volume">Об'єм двигуна (см куб.)</label>
+							<input type="text" class="calc-input" id="engine-volume" value="2000" />
 						</div>
 
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-engine-capacity">Об'єм двигуна (см куб.)</label>
-							<input type="text" class="calc-input" id="calc-engine-capacity" value="" />
-						</div>
-
-						<div class="calc-form-group">
-							<label class="calc-label" for="calc-year">Рік випуску</label>
+							<label class="calc-label" for="year">Рік випуску</label>
 							<div class="calc-select-wrapper">
-								<select class="calc-select" id="calc-year">
-									<option>2025</option>
-									<option>2024</option>
-									<option>2023</option>
-									<option>2022</option>
-									<option>2021</option>
-									<option>2020</option>
-									<option>2019</option>
-									<option>2018</option>
-									<option>2017</option>
-									<option>2016</option>
-									<option>2015</option>
-									<option>2014</option>
-									<option>2013</option>
-									<option>2012</option>
-									<option>2011</option>
-									<option>2010</option>
-									<option>2009</option>
-									<option>2008</option>
-								</select>
+								<select class="calc-select" id="year"></select>
 							</div>
 						</div>
 
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-auction-fee">Аукціонний збір</label>
+							<label class="calc-label" for="auction-type">Аукціонний збір</label>
 							<div class="calc-flex-row">
 								<div class="calc-select-wrapper">
-									<select class="calc-select" id="calc-auction-fee">
-										<option>IAAI</option>
-										<option>Copart</option>
-										<option>Manheim</option>
+									<select class="calc-select" id="auction-type">
+										<option>IAAI auction</option>
+										<option>Copart auction</option>
+										<option>Manheim auction</option>
 									</select>
 								</div>
-								<div class="calc-price">0 $</div>
+								<div class="calc-price" id="auction-fee">0 $</div>
 							</div>
 						</div>
 
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-usa-delivery">Доставка по США</label>
+							<label class="calc-label" for="location">Доставка по США</label>
 							<div class="calc-flex-row">
 								<div class="calc-select-wrapper">
-									<select class="calc-select" id="calc-usa-delivery">
-										<option>ATLANTA EAST - GA</option>
+									<select class="calc-select" id="location" data-live-search="true">
+										<!-- Options will be populated by JavaScript -->
 									</select>
 								</div>
-								<div class="calc-price">595 $</div>
+								<div class="calc-price" id="usa-delivery">595 $</div>
 							</div>
 						</div>
 
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-from-usa">Доставка з США</label>
+							<label class="calc-label" for="port">Доставка з США</label>
 							<div class="calc-flex-row">
-								<input type="text" class="calc-input" id="calc-from-usa" value=" (GA)" />
-								<div class="calc-price">900 $</div>
+								<div class="calc-select-wrapper">
+									<select class="calc-select" id="port">
+										<!-- Options will be populated by JavaScript -->
+									</select>
+								</div>
+								<div class="calc-price" id="from-usa-delivery">900 $</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="calc-form-column">
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-car-price">Вартість авто (USD)</label>
-							<input type="text" class="calc-input" id="calc-car-price" value="" />
+							<label class="calc-label" for="auction-price">Вартість авто (USD)</label>
+							<input type="text" class="calc-input" id="auction-price" value="19500" />
 						</div>
 
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-region">Оберіть регіон</label>
+							<label class="calc-label" for="state-type">Оберіть регіон</label>
 							<div class="calc-select-wrapper">
-								<select class="calc-select" id="calc-region">
-									<option>"Відкриті штати" - 0 $</option>
+								<select class="calc-select" id="state-type">
+									<option value="open">"Відкриті штати" - 0 $</option>
+									<option value="closed">"Закриті штати" - 100 $</option>
+									<option value="manheim">"Manheim" - 100 $</option>
 								</select>
 							</div>
 						</div>
 
 						<div class="calc-form-group">
-							<label class="calc-label" for="calc-commission">Оберіть комісію Best West Cars</label>
+							<label class="calc-label" for="commission-type">Оберіть комісію Best West Cars</label>
 							<div class="calc-select-wrapper">
-								<select class="calc-select" id="calc-commission">
-									<option>Під ключ з ремонтом - 1000 $</option>
+								<select class="calc-select" id="commission-type">
+									<option value="basic">Базова - 600 $</option>
+									<option value="repair">Під ключ з ремонтом - 1000 $</option>
 								</select>
 							</div>
 						</div>
@@ -133,18 +126,21 @@
 				</div>
 
 				<div class="calc-checkbox-container">
-					<div id="calc-custom-checkbox" class="calc-custom-checkbox"></div>
-					<input type="checkbox" id="calc-insurance-checkbox" class="calc-input" />
-					<label for="calc-insurance-checkbox" class="calc-checkbox-label">
-						Страхування (2% від вартості лоту, мінімум 300$)
-					</label>
+					<input type="checkbox" id="insurance" class="calc-input" />
+					<div class="calc-custom-checkbox"></div>
+					<label for="insurance" class="calc-checkbox-label">Страхування (2% від вартості лоту, мінімум 300$)</label>
 				</div>
 
-				<button class="calc-calculate-btn">Розрахувати</button>
+				<button class="calc-calculate-btn" id="calculate-btn">Розрахувати</button>
 			</div>
 
 			<!-- Right Column - Cost Breakdown -->
-			<div class="calc-cost-breakdown">
+			<div class="calc-cost-breakdown" id="results">
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Вартість лоту:</div>
+					<div class="calc-cost-value" id="lot-price">0 $</div>
+				</div>
+
 				<div class="calc-cost-item">
 					<div class="calc-cost-name">Документи на експорт авто:</div>
 					<div class="calc-cost-value">150 $</div>
@@ -170,18 +166,23 @@
 				</div>
 
 				<div class="calc-cost-item">
+					<div class="calc-cost-name">Митна вартість:</div>
+					<div class="calc-cost-value" id="customs-value">0 $</div>
+				</div>
+
+				<div class="calc-cost-item">
 					<div class="calc-cost-name">Акциз:</div>
-					<div class="calc-cost-value">0 $</div>
+					<div class="calc-cost-value" id="excise">0 $</div>
 				</div>
 
 				<div class="calc-cost-item">
 					<div class="calc-cost-name">Ввізне мито:</div>
-					<div class="calc-cost-value">0 $</div>
+					<div class="calc-cost-value" id="import-duty">0 $</div>
 				</div>
 
 				<div class="calc-cost-item">
 					<div class="calc-cost-name">ПДВ:</div>
-					<div class="calc-cost-value">0 $</div>
+					<div class="calc-cost-value" id="vat">0 $</div>
 				</div>
 
 				<div class="calc-cost-item">
@@ -205,17 +206,25 @@
 						<br />
 						в США (1,5%) :
 					</div>
-					<div class="calc-cost-value">0 $</div>
+					<div class="calc-cost-value" id="transfer-fee">0 $</div>
 				</div>
 
 				<div class="calc-total-row">
 					<div class="calc-total-label">РАЗОМ:</div>
-					<div class="calc-total-value">25 000$</div>
+					<div class="calc-total-value" id="total-cost">0 $</div>
 				</div>
 
 				<button class="calc-want-btn">Хочу</button>
 			</div>
 		</div>
-		<script src="calculator.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+		<script src="data.js"></script>
+		<script src="script.js"></script>
+		<script>
+			$(document).ready(function () {
+				$("#location").select2();
+			});
+		</script>
 	</body>
 </html>

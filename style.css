@@ -101,7 +101,6 @@ body {
 .calc-checkbox-container {
     display: flex;
     align-items: center;
-    margin: 15px 0;
     cursor: pointer;
 }
 
@@ -111,21 +110,25 @@ body {
 }
 
 .calc-custom-checkbox {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color, #898989);
+    border-radius: 3px;
+    background: #FFF;
     margin-right: 10px;
     position: relative;
     cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    display: flex;
+    flex-shrink: 0;
 }
 
 .calc-custom-checkbox::after {
     content: '';
     position: absolute;
     display: none;
-    left: 6px;
-    top: 2px;
+    left: 4px;
+    top: 0px;
     width: 5px;
     height: 10px;
     border: solid white;
@@ -133,12 +136,12 @@ body {
     transform: rotate(45deg);
 }
 
-input[type="checkbox"]:checked+.calc-checkbox-label+.calc-custom-checkbox {
+input[type="checkbox"]:checked + .calc-custom-checkbox {
     background-color: #2196F3;
     border-color: #2196F3;
 }
 
-input[type="checkbox"]:checked+.calc-checkbox-label+.calc-custom-checkbox::after {
+input[type="checkbox"]:checked + .calc-custom-checkbox::after {
     display: block;
 }
 
@@ -250,6 +253,8 @@ input[type="checkbox"].calc-input {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
+    grid-auto-rows: min-content;
+
 }
 
 .calc-form-columns {
@@ -257,7 +262,6 @@ input[type="checkbox"].calc-input {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-bottom: 24px;
 }
 
 .calc-checkbox-container {
@@ -281,10 +285,12 @@ input[type="checkbox"].calc-input {
 @media (max-width: 767.9px) {
     .calc-form-section {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .calc-form-columns {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .calc-checkbox-container {
