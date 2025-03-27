@@ -9,7 +9,7 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css"
 		/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 	</head>
 	<body>
 		<div class="calc-container">
@@ -31,11 +31,11 @@
 						<div class="calc-form-group">
 							<label class="calc-label" for="engine-type">Тип двигуна</label>
 							<div class="calc-select-wrapper">
-								<select class="calc-select" id="engine-type">
-									<option>Бензтиновий</option>
-									<option>Дизельній</option>
+								<select class="calc-select" id="engine-type" onchange="toggleBatteryCapacity()">
+									<option>Бензиновий</option>
+									<option>Дизельний</option>
 									<option>Гібридний</option>
-									<option>Електро</option>
+									<option>Електричний</option>
 								</select>
 							</div>
 						</div>
@@ -109,6 +109,7 @@
 									<option value="open">"Відкриті штати" - 0 $</option>
 									<option value="closed">"Закриті штати" - 100 $</option>
 									<option value="manheim">"Manheim" - 100 $</option>
+									<option value="manheim">Канада - 100 $</option>
 								</select>
 							</div>
 						</div>
@@ -126,8 +127,7 @@
 				</div>
 
 				<div class="calc-checkbox-container">
-					<input type="checkbox" id="insurance" class="calc-input" />
-					<div class="calc-custom-checkbox"></div>
+					<input type="checkbox" id="insurance" class="calc-checkbox" />
 					<label for="insurance" class="calc-checkbox-label">Страхування (2% від вартості лоту, мінімум 300$)</label>
 				</div>
 
@@ -165,10 +165,10 @@
 					<div class="calc-cost-value">110 $</div>
 				</div>
 
-				<div class="calc-cost-item">
+				<!-- <div class="calc-cost-item">
 					<div class="calc-cost-name">Митна вартість:</div>
 					<div class="calc-cost-value" id="customs-value">0 $</div>
-				</div>
+				</div> -->
 
 				<div class="calc-cost-item">
 					<div class="calc-cost-name">Акциз:</div>
@@ -195,9 +195,24 @@
 					<div class="calc-cost-value">80 $</div>
 				</div>
 
-				<div class="calc-cost-item">
+				<!-- <div class="calc-cost-item">
 					<div class="calc-cost-name">Сертифікація:</div>
 					<div class="calc-cost-value">150 $</div>
+				</div> -->
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Аукціонний збір:</div>
+					<div class="calc-cost-value" id="auction-fee-list">0 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Доставка по США:</div>
+					<div class="calc-cost-value" id="usa-delivery-list">0 $</div>
+				</div>
+
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">Доставка з США:</div>
+					<div class="calc-cost-value" id="from-usa-delivery-list">0 $</div>
 				</div>
 
 				<div class="calc-cost-item">
@@ -209,6 +224,15 @@
 					<div class="calc-cost-value" id="transfer-fee">0 $</div>
 				</div>
 
+				<div class="calc-cost-item">
+					<div class="calc-cost-name">
+						Страхування
+						<br />
+						(2% від вартості лоту, мінімум 300$)
+					</div>
+					<div class="calc-cost-value" id="calc-cost-insurance">0 $</div>
+				</div>
+
 				<div class="calc-total-row">
 					<div class="calc-total-label">РАЗОМ:</div>
 					<div class="calc-total-value" id="total-cost">0 $</div>
@@ -218,12 +242,14 @@
 			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 		<script src="data.js"></script>
 		<script src="script.js"></script>
 		<script>
 			$(document).ready(function () {
-				$("#location").select2();
+				new Choices(document.getElementById("location"), {
+					itemSelectText: "", // убирает надпись "Press to select"
+				});
 			});
 		</script>
 	</body>

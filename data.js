@@ -205,7 +205,7 @@ const fixedCosts = {
     borderCrossing: 110,
     brokerServices: 250,
     customsDelivery: 80,
-    certification: 150
+    certification: 0
 };
 
 // Best West Auto commission options
@@ -247,27 +247,37 @@ function getLandShippingCost(location) {
 
 // Get auction fee
 function getAuctionFee(auctionPrice, auctionType) {
-    // Find the highest price bracket that is lower than or equal to the auction price
     let feeBracket = auctionFeesData.filter(item => item.price <= auctionPrice)
         .sort((a, b) => b.price - a.price)[0];
 
-    // If no bracket found, use the lowest bracket
     if (!feeBracket) {
         feeBracket = auctionFeesData[0];
     }
 
     if (auctionType === "Copart auction") {
-        // For prices above 15000, use percentage formula for Copart
         if (auctionPrice > 15000) {
             return auctionPrice * 0.06 + 260;
         }
-        return feeBracket.copartFee;
+        let fee = feeBracket.copartFee;
+        if (fee === 0) {
+            let nextBracket = auctionFeesData.find(item => item.price > feeBracket.price && item.copartFee !== 0);
+            if (nextBracket) {
+                fee = nextBracket.copartFee;
+            }
+        }
+        return fee;
     } else if (auctionType === "IAAI auction") {
-        // For prices above 15000, use percentage formula for IAAI
         if (auctionPrice > 15000) {
             return auctionPrice * 0.06 + 260;
         }
-        return feeBracket.iaaiBaseFee;
+        let fee = feeBracket.iaaiBaseFee;
+        if (fee === 0) {
+            let nextBracket = auctionFeesData.find(item => item.price > feeBracket.price && item.iaaiBaseFee !== 0);
+            if (nextBracket) {
+                fee = nextBracket.iaaiBaseFee;
+            }
+        }
+        return fee;
     } else if (auctionType === "Manheim auction") {
         return feeBracket.manheimFee || 0;
     }
@@ -296,4 +306,4 @@ function getAdditionalAuctionFee(auctionPrice, auctionType) {
 // Check if a state is closed
 function isClosedState(location) {
     return closedStates.some(state => location.includes(state));
-} 
+}

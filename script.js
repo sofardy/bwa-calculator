@@ -3,10 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeYearDropdown();
     initializeLocationDropdown();
 
-    // Add event listeners
-    document.getElementById('engine-type').addEventListener('change', toggleBatteryCapacity);
-    document.getElementById('location').addEventListener('change', updatePortDropdown);
-    document.getElementById('calculate-btn').addEventListener('click', calculateTotalCost);
+    // Добавляем обработчики изменения для input (реагируют сразу при вводе) и для select
+    document.querySelectorAll('input').forEach(element => {
+        element.addEventListener('input', calculateTotalCost);
+    });
+    document.querySelectorAll('select').forEach(element => {
+        element.addEventListener('change', calculateTotalCost);
+        element.addEventListener('change', updatePortDropdown); // чтобы обновлять Доставка з сша при изменении локации
+    });
 
     // Initially toggle battery capacity field
     toggleBatteryCapacity();
@@ -115,9 +119,11 @@ function calculateExcise(engineType, engineVolume, year, batteryCapacity) {
 }
 
 // Calculate VAT
-function calculateVAT(auctionPrice, engineType) {
-    // VAT is 20% of auction price for all vehicles, including electric
-    return auctionPrice * 0.2;
+function calculateVAT(customsValue, excise, engineType) {
+    if (engineType === 'Електро') {
+        return 0;
+    }
+    return (customsValue + 0.1 * customsValue + excise) * 0.2;
 }
 
 // Calculate import duty
@@ -151,13 +157,15 @@ function calculateTotalCost() {
     const stateType = document.getElementById('state-type').value;
     const insuranceChecked = document.getElementById('insurance').checked;
 
+
     // Validate input
     if (
         (engineType !== 'Електро' && (isNaN(engineVolume) || engineVolume <= 0)) ||
         (engineType === 'Електро' && (isNaN(batteryCapacity) || batteryCapacity <= 0)) ||
         isNaN(auctionPrice) || auctionPrice <= 0
     ) {
-        alert('Будь ласка, заповніть усі необхідні поля коректно');
+        // alert('Будь ласка, заповніть усі необхідні поля коректно');
+
         return;
     }
 
@@ -191,13 +199,13 @@ function calculateTotalCost() {
     // Transfer fee
     const transferFee = (auctionPrice + auctionFee) * 0.015;
 
-    // Calculate customs value (for documentation purposes only)
+    // Calculate customs value (for documentation purposes only) Митна вартість
     const customsValue = calculateCustomsValue(auctionPrice, auctionFee);
 
     // Calculate customs costs with updated formulas
     const excise = calculateExcise(engineType, engineVolume, year, batteryCapacity);
-    const importDuty = calculateImportDuty(auctionPrice, engineType);
-    const vat = calculateVAT(auctionPrice, engineType);
+    const importDuty = calculateImportDuty(customsValue, engineType);
+    const vat = calculateVAT(customsValue, excise, engineType);
 
     // Fixed costs
     const fixedCostsTotal =
@@ -236,8 +244,12 @@ function calculateTotalCost() {
     document.getElementById('import-duty').textContent = formatNumber(importDuty) + ' $';
     document.getElementById('vat').textContent = formatNumber(vat) + ' $';
     document.getElementById('total-cost').textContent = formatNumber(totalCost) + ' $';
-    document.getElementById('customs-value').textContent = formatNumber(customsValue) + ' $';
+    // document.getElementById('customs-value').textContent = formatNumber(customsValue) + ' $';
+    document.getElementById('auction-fee-list').textContent = formatNumber(auctionFee) + ' $';
+    document.getElementById('usa-delivery-list').textContent = formatNumber(landDeliveryCost) + ' $';
+    document.getElementById('from-usa-delivery-list').textContent = formatNumber(seaDeliveryCost + additionalCosts) + ' $';
+    document.getElementById('calc-cost-insurance').textContent = formatNumber(insuranceCost) + ' $';
 
     // Show results
     document.getElementById('results').classList.remove('hidden');
-} 
+}
