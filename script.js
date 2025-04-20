@@ -1,3 +1,18 @@
+import {
+    getLocations,
+    getPortForLocation,
+    getSeaShippingCost,
+    getLandShippingCost,
+    getAuctionFee,
+    getAdditionalAuctionFee,
+    isClosedState,
+    fixedCosts,
+    bwCommission,
+    stateOptions,
+    portMapping
+} from './data.js';
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize form elements
     initializeYearDropdown();

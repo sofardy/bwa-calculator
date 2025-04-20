@@ -1,3 +1,5 @@
+import { landDeliveryLocations } from './cost_of_land_delivery_from_different_locations.js';
+
 // Auction fees data
 const auctionFeesData = [
     { price: 49, copartFee: 201, iaaiAdditionalFee: 0, iaaiBaseFee: 201 },
@@ -85,103 +87,6 @@ const seaShippingCosts = [
     { port: "Canada Montreal/Toronto", cost: 1400 }
 ];
 
-// Land delivery locations with more comprehensive locations
-const landDeliveryLocations = [
-    // Savannah region
-    { location: "ATLANTA EAST - GA", port: "SAVANNAH,GA", cost: 595 },
-    { location: "ATLANTA NORTH - GA", port: "SAVANNAH,GA", cost: 595 },
-    { location: "ATLANTA SOUTH - GA", port: "SAVANNAH,GA", cost: 595 },
-    { location: "ATLANTA WEST - GA", port: "SAVANNAH,GA", cost: 595 },
-    { location: "BIRMINGHAM - AL", port: "SAVANNAH,GA", cost: 675 },
-    { location: "CARTERSVILLE - GA", port: "SAVANNAH,GA", cost: 570 },
-    { location: "CHARLESTON - SC", port: "SAVANNAH,GA", cost: 520 },
-    { location: "CHINA GROVE - NC", port: "SAVANNAH,GA", cost: 595 },
-    { location: "COLUMBIA - SC", port: "SAVANNAH,GA", cost: 490 },
-    { location: "CONCORD - NC", port: "SAVANNAH,GA", cost: 570 },
-    { location: "DANVILLE - VA", port: "SAVANNAH,GA", cost: 645 },
-    { location: "ATLANTA GA", port: "SAVANNAH,GA", cost: 595 },
-    { location: "DOTHAN - AL", port: "SAVANNAH,GA", cost: 700 },
-    { location: "GREER - SC", port: "SAVANNAH,GA", cost: 495 },
-    { location: "JACKSONVILLE EAST - FL", port: "SAVANNAH,GA", cost: 470 },
-    { location: "JACKSONVILLE NORTH -FL", port: "SAVANNAH,GA", cost: 470 },
-    { location: "JACKSONVILLE WEST - FL", port: "SAVANNAH,GA", cost: 470 },
-    { location: "KNOXVILLE - TN", port: "SAVANNAH,GA", cost: 670 },
-    { location: "LUMBERTON -NC", port: "SAVANNAH,GA", cost: 545 },
-    { location: "MACON - GA", port: "SAVANNAH,GA", cost: 520 },
-    { location: "MEBANE - NC", port: "SAVANNAH,GA", cost: 570 },
-    { location: "MEMPHIS - TN", port: "SAVANNAH,GA", cost: 770 },
-    { location: "MOBILE - AL", port: "SAVANNAH,GA", cost: 650 },
-    { location: "MOCKSVILLE - NC", port: "SAVANNAH,GA", cost: 570 },
-    { location: "MONTGOMERY - AL", port: "SAVANNAH,GA", cost: 675 },
-    { location: "NASHVILLE - TN", port: "SAVANNAH,GA", cost: 670 },
-    { location: "ORLANDO - FL", port: "SAVANNAH,GA", cost: 570 },
-    { location: "ORLANDO NORTH - FL", port: "SAVANNAH,GA", cost: 570 },
-    { location: "ORLANDO SOUTH - FL", port: "SAVANNAH,GA", cost: 570 },
-    { location: "RALEIGH - NC", port: "SAVANNAH,GA", cost: 570 },
-    { location: "SAVANNAH - GA", port: "SAVANNAH,GA", cost: 395 },
-
-    // Chicago region
-    { location: "KANSAS CITY - KS", port: "CHICAGO,IL", cost: 695 },
-    { location: "Kansas City East - MO", port: "CHICAGO,IL", cost: 695 },
-    { location: "MILWAUKEE NORTH - WI", port: "CHICAGO,IL", cost: 550 },
-    { location: "MILWAUKEE SOUTH - WI", port: "CHICAGO,IL", cost: 550 },
-    { location: "CHICAGO HEIGHTS IL", port: "CHICAGO,IL", cost: 520 },
-    { location: "SOUTH BEND (IN)", port: "CHICAGO,IL", cost: 570 },
-    { location: "OMAHA (NE)", port: "CHICAGO,IL", cost: 645 },
-    { location: "DETROIT - MI", port: "CHICAGO,IL", cost: 700 },
-    { location: "DENVER - CO", port: "CHICAGO,IL", cost: 820 },
-    { location: "CHICAGO NORTH - IL", port: "CHICAGO,IL", cost: 470 },
-    { location: "CHICAGO SOUTH - IL", port: "CHICAGO,IL", cost: 420 },
-
-    // Houston region
-    { location: "BATON ROUGE - LA", port: "HOUSTON,TX", cost: 595 },
-    { location: "AUSTIN - TX", port: "HOUSTON,TX", cost: 520 },
-    { location: "CORPUS CHRISTI - TX", port: "HOUSTON,TX", cost: 545 },
-    { location: "DALLAS SOUTH - TX", port: "HOUSTON,TX", cost: 570 },
-    { location: "EL PASO - TX", port: "HOUSTON,TX", cost: 720 },
-    { location: "DALLAS- TX", port: "HOUSTON,TX", cost: 570 },
-    { location: "FT.WORTH - TX", port: "HOUSTON,TX", cost: 545 },
-    { location: "HOUSTON - TX", port: "HOUSTON,TX", cost: 470 },
-    { location: "SAN ANTONIO - TX", port: "HOUSTON,TX", cost: 545 },
-
-    // Los Angeles region
-    { location: "LOS ANGELES - CA", port: "LOSANGELES,CA", cost: 470 },
-    { location: "LONG BEACH - CA", port: "LOSANGELES,CA", cost: 420 },
-    { location: "SAN DIEGO - CA", port: "LOSANGELES,CA", cost: 520 },
-    { location: "PHOENIX", port: "LOSANGELES,CA", cost: 620 },
-    { location: "LAS VEGAS - NV", port: "LOSANGELES,CA", cost: 720 },
-    { location: "SAN JOSE - CA", port: "LOSANGELES,CA", cost: 695 },
-    { location: "SACRAMENTO - CA", port: "LOSANGELES,CA", cost: 645 },
-
-    // New York region
-    { location: "BALTIMORE - MD", port: "New York, NY", cost: 570 },
-    { location: "BUFFALO - NY", port: "New York, NY", cost: 745 },
-    { location: "HARTFORD - CT", port: "New York, NY", cost: 505 },
-    { location: "LONG ISLAND - NY", port: "New York, NY", cost: 520 },
-    { location: "NEWBURGH - NY", port: "New York, NY", cost: 520 },
-    { location: "NORTH BOSTON - MA", port: "New York, NY", cost: 645 },
-    { location: "PHILADELPHIA - PA", port: "New York, NY", cost: 500 },
-    { location: "PITTSBURGH NORTH - PA", port: "New York, NY", cost: 745 },
-
-    // Florida region
-    { location: "TAMPA - FL", port: "Florida, FL", cost: 600 },
-    { location: "MIAMI CENTRAL - FL", port: "Florida, FL", cost: 470 },
-    { location: "MIAMI NORTH - FL", port: "Florida, FL", cost: 470 },
-    { location: "MIAMI SOUTH - FL", port: "Florida, FL", cost: 470 },
-    { location: "WEST PALM BEACH - FL", port: "Florida, FL", cost: 470 },
-
-    // Canada region
-    { location: "Toronto (CANADA)", port: "Monreal, CA", cost: 800 },
-    { location: "Montreal CA (Copart)", port: "Monreal, CA", cost: 800 },
-    { location: "Ottawa CA (Impact)", port: "Monreal, CA", cost: 525 },
-
-    // Seattle region
-    { location: "PORTLAND NORTH - OR", port: "SEATTLE, WA", cost: 670 },
-    { location: "PORTLAND SOUTH - OR", port: "SEATTLE, WA", cost: 670 },
-    { location: "SEATTLE (WA)", port: "SEATTLE, WA", cost: 420 },
-    { location: "SPOKANE - WA", port: "SEATTLE, WA", cost: 620 }
-];
-
 // Mapping for ports to use for sea shipping
 const portMapping = {
     "SAVANNAH,GA": "Savanna (GA)",
@@ -220,6 +125,8 @@ const stateOptions = {
     closed: 100,
     manheim: 100
 };
+
+console.log(landDeliveryLocations);
 
 // Initialize all of the available locations for the form
 function getLocations() {
@@ -307,3 +214,17 @@ function getAdditionalAuctionFee(auctionPrice, auctionType) {
 function isClosedState(location) {
     return closedStates.some(state => location.includes(state));
 }
+
+export {
+    getLocations,
+    getPortForLocation,
+    getSeaShippingCost,
+    getLandShippingCost,
+    getAuctionFee,
+    getAdditionalAuctionFee,
+    isClosedState,
+    fixedCosts,
+    bwCommission,
+    stateOptions,
+    portMapping
+};
