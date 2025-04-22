@@ -775,7 +775,7 @@ export const landDeliveryLocations = [
 		"cost": 820
 	},
 	{
-		"location": "FONTANA",
+		"location": "FONTANA - TX",
 		"port": "HOUSTON,TX",
 		"cost": 1370
 	},
@@ -1105,7 +1105,7 @@ export const landDeliveryLocations = [
 		"cost": 645
 	},
 	{
-		"location": "FONTANA",
+		"location": "FONTANA – CA",
 		"port": "LOSANGELES,CA",
 		"cost": 520
 	},
@@ -1796,167 +1796,167 @@ export const landDeliveryLocations = [
 	},
 	{
 		"location": "Toronto (CANADA)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 800
 	},
 	{
 		"location": "Hamilton (CANADA)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 710
 	},
 	{
 		"location": "London (CANADA)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 700
 	},
 	{
 		"location": "Montreal CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 800
 	},
 	{
 		"location": "Ottawa CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 525
 	},
 	{
 		"location": "QUEBEC CITY CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 550
 	},
 	{
 		"location": "Sudbury (CANADA)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 950
 	},
 	{
 		"location": "Halifax CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1025
 	},
 	{
 		"location": "MONCTON CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 925
 	},
 	{
 		"location": "Edmonton CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1700
 	},
 	{
 		"location": "Calgary CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1700
 	},
 	{
 		"location": "St Johns Newfoundland CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1700
 	},
 	{
 		"location": "Vancouver (CANADA)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 2350
 	},
 	{
 		"location": "Saskatoon (CANADA)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1700
 	},
 	{
 		"location": "Winnipeg",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1700
 	},
 	{
 		"location": "Stouffville",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 650
 	},
 	{
 		"location": "Winchester CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 525
 	},
 	{
 		"location": "Rivieredu Loup/QC CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 950
 	},
 	{
 		"location": "St Filibere/QC (CANADA)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 800
 	},
 	{
 		"location": "Manitoba",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1400
 	},
 	{
 		"location": "Kenora",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1300
 	},
 	{
 		"location": "Calgary CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1800
 	},
 	{
 		"location": "Edmonton CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1800
 	},
 	{
 		"location": "Halifax CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1450
 	},
 	{
 		"location": "Moncton CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1525
 	},
 	{
 		"location": "Ottawa CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 800
 	},
 	{
 		"location": "QUEBEC CITI CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 800
 	},
 	{
 		"location": "ST JOHNS CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 2300
 	},
 	{
 		"location": "Winchester CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 800
 	},
 	{
 		"location": "Rivieredu LOUP/QC CA (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 1400
 	},
 	{
 		"location": "Montreal CA (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 450
 	},
 	{
 		"location": "COOKSTOWN (Copart)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 650
 	},
 	{
 		"location": "COOKSTOWN (Impact)",
-		"port": "LOSANGELES,CA",
+		"port": "Monreal, CA",
 		"cost": 850
 	},
 	{
