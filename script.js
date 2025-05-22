@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
         element.addEventListener('change', updatePortDropdown); // чтобы обновлять Доставка з сша при изменении локации
     });
 
+    // Добавляем обработчик для смены типа двигателя
+    document.getElementById('engine-type').addEventListener('change', toggleBatteryCapacity);
+
     // Initially toggle battery capacity field
     toggleBatteryCapacity();
 });
