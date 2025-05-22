@@ -28,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Добавляем обработчик для смены типа двигателя
-    document.getElementById('engine-type').addEventListener('change', toggleBatteryCapacity);
+    document.getElementById('engine-type').addEventListener('change', function() {
+        toggleBatteryCapacity();
+        calculateTotalCost();
+    });
 
     // Initially toggle battery capacity field
     toggleBatteryCapacity();
